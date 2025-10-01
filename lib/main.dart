@@ -61,7 +61,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     Color color = Theme.of(context).primaryColor;
 
-    Widget ButtonSection = Row(
+    Widget buttonSection = Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         _buildButtonColumn(color, Icons.call, 'CALL'),
@@ -74,7 +74,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter layout: Iga Ramadana Sahputra - 2341760083',
       home: Scaffold(
         appBar: AppBar(title: const Text('Flutter layout demo')),
-        body: Column(children: [titleSection, ButtonSection]),
+        body: Column(children: [titleSection, buttonSection]),
       ),
     );
   }
