@@ -70,11 +70,21 @@ class MyApp extends StatelessWidget {
       ],
     );
 
+    Widget textSection = Container(
+      padding: const EdgeInsets.all(32),
+      child: const Text(
+        'Batu adalah sebuah kota di Provinsi Jawa Timur, Indonesia. Kota ini terletak sekitar 20 kilometer di sebelah barat laut Kota Malang. Batu dikenal sebagai tujuan wisata yang populer, terutama karena udaranya yang sejuk dan pemandangan alamnya yang indah. Beberapa tempat wisata terkenal di Batu antara lain Jatim Park, Museum Angkut, dan Selecta.'
+        '- Iga Ramadana Sahputra - 2341760083',
+        textAlign: TextAlign.justify,
+        softWrap: true,
+      ),
+    );
+
     return MaterialApp(
       title: 'Flutter layout: Iga Ramadana Sahputra - 2341760083',
       home: Scaffold(
         appBar: AppBar(title: const Text('Flutter layout demo')),
-        body: Column(children: [titleSection, buttonSection]),
+        body: Column(children: [titleSection, buttonSection, textSection]),
       ),
     );
   }
