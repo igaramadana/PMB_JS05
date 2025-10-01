@@ -36,24 +36,45 @@ class MyApp extends StatelessWidget {
     ),
   );
 
+  Column _buildButtonColumn(Color color, IconData icon, String label) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(icon, color: color),
+        Container(
+          margin: const EdgeInsets.only(top: 8),
+          child: Text(
+            label,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w400,
+              color: color,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    Color color = Theme.of(context).primaryColor;
+
+    Widget ButtonSection = Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        _buildButtonColumn(color, Icons.call, 'CALL'),
+        _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
+        _buildButtonColumn(color, Icons.share, 'SHARE'),
+      ],
+    );
+
     return MaterialApp(
       title: 'Flutter layout: Iga Ramadana Sahputra - 2341760083',
       home: Scaffold(
         appBar: AppBar(title: const Text('Flutter layout demo')),
-        body: Column(
-          children: [
-            titleSection,
-            const Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Text(
-                'Tempat wisata gunung yang indah di Kota Batu, Malang. Menawarkan pemandangan alam yang menakjubkan dan udara yang sejuk.',
-                textAlign: TextAlign.justify,
-              ),
-            ),
-          ],
-        ),
+        body: Column(children: [titleSection, ButtonSection]),
       ),
     );
   }
